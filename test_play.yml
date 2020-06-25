@@ -1,7 +1,8 @@
 ---
 - hosts: lrcloud
+  become: yes
   tasks:
   - name: Update apt-cache
-    apt: update_cache=yes
+    yum: update_cache=yes
   - name: Install Vim
-    apt: name=vim state=latest 
+    yum: name=vim state=latest 
